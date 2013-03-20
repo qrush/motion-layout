@@ -6,7 +6,7 @@ task :default do
   dir = "MotionLayoutTest"
   `rm -rf #{dir}`
   `motion create #{dir}`
-  `rm #{dir}/app_delegate.rb`
+  `rm -f #{dir}/app_delegate.rb`
   `cp -r example/* #{dir}/`
 
   Dir.chdir(dir) do

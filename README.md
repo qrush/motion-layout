@@ -1,6 +1,6 @@
 # motion-layout
 
-A nice way to use iOS6+ autolayout in your RubyMotion app. Basically, use ASCII-art inspired format strings to build your layout.
+A nice way to use iOS6+ autolayout in your RubyMotion app. Use ASCII-art inspired format strings to build your app's layout!
 
 ## Installation
 
@@ -38,7 +38,7 @@ Motion::Layout.new do |layout|
 end
 ```
 
-And here's an example you can run right inside this repo, converted from the [RubyMotionSamples](https://github.com/HipByte/RubyMotionSamples) repo:
+And here's an example you can run right inside this repo, the Time app converted to use Auto Layout from the [RubyMotionSamples](https://github.com/HipByte/RubyMotionSamples) repo:
 
 ![](https://raw.github.com/qrush/motion-layout/master/screenshot2.png)
 

@@ -8,9 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Motion::Layout::VERSION
   gem.authors       = ["Nick Quaranto"]
   gem.email         = ["nick@quaran.to"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.summary = gem.description = %q{A nice way to use iOS6+ autolayout in your RubyMotion app. Use ASCII-art inspired format strings to build your app's layout!}
+  gem.homepage      = "https://github.com/qrush/motion-layout"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

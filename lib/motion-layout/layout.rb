@@ -10,11 +10,11 @@ module Motion
     end
 
     def metrics(metrics)
-      @metrics = metrics
+      @metrics = Hash[metrics.keys.map(&:to_s).zip(metrics.values)]
     end
 
     def subviews(subviews)
-      @subviews = subviews
+      @subviews = Hash[subviews.keys.map(&:to_s).zip(subviews.values)]
     end
 
     def view(view)

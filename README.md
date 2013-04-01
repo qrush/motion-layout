@@ -53,6 +53,34 @@ Motion::Layout.new do |layout|
 end
 ```
 
+### Layout Options
+
+The default layout options will be `NSLayoutFormatAlignAllCenterY` for a horizontal format and `NSLayoutFormatAlignAllCenterX` for a vertical format. If you need to override this pass the layout options as a second parameter.
+
+``` ruby
+Motion::Layout.new do |layout|
+  ...
+  layout.vertical "[version]-|"
+  layout.horizontal "[version]-5-[version_number]-|", NSLayoutFormatAlignAllBaseline
+end
+```
+
+Or if you get a warning about not being able to simultaneously satisfy constraints that looks something like...
+
+```
+Will attempt to recover by breaking constraint
+<NSLayoutConstraint:0x952a320 UILabel:0x951ecd0.centerX == UIView:0x95199b0.centerX>
+```
+
+then you can clear the default options with a 0
+
+``` ruby
+Motion::Layout.new do |layout|
+  ...
+  layout.vertical "[operator]-[separator]", 0
+end
+```
+
 ## TODO
 
 * Support finer grained constraints
@@ -72,3 +100,4 @@ I couldn't figure out how to test this automatically. Run `bundle` to get the ge
 ## License
 
 MIT. See `LICENSE`.
+

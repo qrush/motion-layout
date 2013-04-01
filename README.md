@@ -45,7 +45,7 @@ And here's an example you can run right inside this repo, the Time app converted
 ``` ruby
 Motion::Layout.new do |layout|
   layout.view view
-  layout.subviews "state" => @state, "action" => @action
+  layout.subviews state: @state, action: @action
   layout.metrics "top" => 200, "margin" => 20, "height" => 40
   layout.vertical "|-top-[state(==height)]-margin-[action(==height)]"
   layout.horizontal "|-margin-[state]-margin-|"

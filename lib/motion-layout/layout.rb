@@ -21,12 +21,12 @@ module Motion
       @view = view
     end
 
-    def horizontal(horizontal)
-      @horizontals << horizontal
+    def horizontal(horizontal, options = NSLayoutFormatAlignAllCenterY)
+      @horizontals << [horizontal, options]
     end
 
-    def vertical(vertical)
-      @verticals << vertical
+    def vertical(vertical, options = NSLayoutFormatAlignAllCenterX)
+      @verticals << [vertical, options]
     end
 
     private
@@ -38,11 +38,11 @@ module Motion
       end
 
       constraints = []
-      constraints += @verticals.map do |vertical|
-        NSLayoutConstraint.constraintsWithVisualFormat("V:#{vertical}", options:NSLayoutFormatAlignAllCenterX, metrics:@metrics, views:@subviews)
+      constraints += @verticals.map do |vertical, options|
+        NSLayoutConstraint.constraintsWithVisualFormat("V:#{vertical}", options: options, metrics:@metrics, views:@subviews)
       end
-      constraints += @horizontals.map do |horizontal|
-        NSLayoutConstraint.constraintsWithVisualFormat("H:#{horizontal}", options:NSLayoutFormatAlignAllCenterY, metrics:@metrics, views:@subviews)
+      constraints += @horizontals.map do |horizontal, options|
+        NSLayoutConstraint.constraintsWithVisualFormat("H:#{horizontal}", options: options, metrics:@metrics, views:@subviews)
       end
 
       @view.addConstraints(constraints.flatten)

@@ -33,7 +33,7 @@ module Motion
 
     private
 
-    def resolve_opts(opt)
+    def resolve_options(opt)
       opt_hash = {
         left: NSLayoutFormatAlignAllLeft,
         right: NSLayoutFormatAlignAllRight,

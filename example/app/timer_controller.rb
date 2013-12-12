@@ -37,13 +37,29 @@ class TimerController < UIViewController
     @action.setTitle('Stop', forState:UIControlStateSelected)
     @action.addTarget(self, action:'actionTapped', forControlEvents:UIControlEventTouchUpInside)
 
+    @version = UILabel.new
+    @version.font = UIFont.systemFontOfSize(10)
+    @version.text = 'version'
+    @version.textAlignment = UITextAlignmentRight
+    @version.textColor = UIColor.whiteColor
+    @version.backgroundColor = UIColor.clearColor
+
+    @versionNumber = UILabel.new
+    @versionNumber.font = UIFont.systemFontOfSize(19)
+    @versionNumber.text = '0.1.0'
+    @versionNumber.textAlignment = UITextAlignmentRight
+    @versionNumber.textColor = UIColor.whiteColor
+    @versionNumber.backgroundColor = UIColor.clearColor
+
     Motion::Layout.new do |layout|
       layout.view view
-      layout.subviews "state" => @state, "action" => @action
+      layout.subviews "state" => @state, "action" => @action, "version" => @version, "version_number" => @versionNumber
       layout.metrics "top" => 200, "margin" => 20, "height" => 40
       layout.vertical "|-top-[state(==height)]-margin-[action(==height)]"
+      layout.vertical "[version]|"
       layout.horizontal "|-margin-[state]-margin-|"
       layout.horizontal "|-margin-[action]-margin-|"
+      layout.horizontal "[version]-5-[version_number]|", :baseline
     end
   end
 

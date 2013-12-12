@@ -1,5 +1,19 @@
 module Motion
   class Layout
+    OPTIONS = {
+      left: NSLayoutFormatAlignAllLeft,
+      right: NSLayoutFormatAlignAllRight,
+      top: NSLayoutFormatAlignAllTop,
+      bottom: NSLayoutFormatAlignAllBottom,
+      leading: NSLayoutFormatAlignAllLeading,
+      trailing: NSLayoutFormatAlignAllTrailing,
+      centerx: NSLayoutFormatAlignAllCenterX,
+      centery: NSLayoutFormatAlignAllCenterY,
+      baseline: NSLayoutFormatAlignAllBaseline,
+      leading_to_trailing: NSLayoutFormatDirectionLeadingToTrailing,
+      left_to_right: NSLayoutFormatDirectionLeftToRight,
+      right_to_left: NSLayoutFormatDirectionRightToLeft
+    }
     def initialize(&block)
       @verticals   = []
       @horizontals = []
@@ -34,21 +48,10 @@ module Motion
     private
 
     def resolve_options(opt)
-      opt_hash = {
-        left: NSLayoutFormatAlignAllLeft,
-        right: NSLayoutFormatAlignAllRight,
-        top: NSLayoutFormatAlignAllTop,
-        bottom: NSLayoutFormatAlignAllBottom,
-        leading: NSLayoutFormatAlignAllLeading,
-        trailing: NSLayoutFormatAlignAllTrailing,
-        centerx: NSLayoutFormatAlignAllCenterX,
-        centery: NSLayoutFormatAlignAllCenterY,
-        baseline: NSLayoutFormatAlignAllBaseline,
-      }
       opt.inject(0) do |m,x|
         if x.kind_of?(Numeric)
           m | x.to_i
-        elsif o = opt_hash[x.to_s.downcase.to_sym]
+        elsif o = OPTIONS[x.to_s.downcase.to_sym]
           m | o
         else
           raise "invalid opt: #{x.to_s.downcase}"

@@ -1,6 +1,7 @@
 module Motion
   class Layout
     OPTIONS = {
+      none: 0,
       left: NSLayoutFormatAlignAllLeft,
       right: NSLayoutFormatAlignAllRight,
       top: NSLayoutFormatAlignAllTop,
@@ -36,12 +37,12 @@ module Motion
     end
 
     def horizontal(horizontal, *options)
-      options = [:centery] if options.empty?
+      options = [:none] if options.empty?
       @horizontals << [horizontal, resolve_options(options)]
     end
 
     def vertical(vertical, *options)
-      options = [:centerx] if options.empty?
+      options = [:none] if options.empty?
       @verticals << [vertical, resolve_options(options)]
     end
 

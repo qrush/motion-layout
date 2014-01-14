@@ -22,7 +22,7 @@ Then in your `Rakefile`:
 
 ## Usage
 
-Using AutoLayout is a way to put UI elements in your iPhone app without using Interface Builder, and without being very specific about pixel sizes, locations, etc. The layout strings are ASCII inspired, and Apple's documentation on the [Visual Format Language](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/AutolayoutPG/Articles/formatLanguage.html#//apple_ref/doc/uid/TP40010853-CH3-SW1) is a necessary read and reference.
+Using AutoLayout is a way to put UI elements in your iPhone app without using Interface Builder, and without being very specific about pixel sizes, locations, etc. The layout strings are ASCII inspired, and Apple's documentation on the [Visual Format Language](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage/VisualFormatLanguage.html) is a necessary read and reference.
 
 Here's an example of `Motion::Layout` usage from inside of [Basecamp for iPhone](https://itunes.apple.com/us/app/id599139477) on a `UITableView`'s `tableFooterView`:
 

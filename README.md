@@ -52,6 +52,17 @@ Motion::Layout.new do |layout|
   layout.horizontal "|-margin-[action]-margin-|"
 end
 ```
+### Layout Options
+
+Check Motion::Layout::OPTIONS for available options. The default layout options is 0, which is same as [NSLayoutConstraint constraintsWithVisualFormat:options:mertics:views:]. Check [document](https://developer.apple.com/library/ios/DOCUMENTATION/AppKit/Reference/NSLayoutConstraint_Class/NSLayoutConstraint/NSLayoutConstraint.html#//apple_ref/occ/clm/NSLayoutConstraint/constraintsWithVisualFormat:options:metrics:views:) for meaning of each options.
+
+``` ruby
+Motion::Layout.new do |layout|
+  ...
+  layout.vertical "[version]-|"
+  layout.horizontal "[version]-5-[version_number]-|", :baseline
+end
+```
 
 ## TODO
 

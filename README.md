@@ -61,7 +61,7 @@ end
 
 ## Contributing
 
-I couldn't figure out how to test this automatically. Run `bundle` to get the gems you need, and then `rake` to generate a RubyMotion app in the iOS simulator
+Run `bundle` to get the gems you need. Then run `rake` to generate a RubyMotion app in the iOS simulator or run `rake spec` to run the test suite. 
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
